@@ -3,6 +3,8 @@ mason:
   read_length: 150
   fragment_size_stddev: 10
   snp_rate: 0.01
-  small_indel_rate: 0.001
-  max_small_indel_size: 5
+  haplotypes: 2
   num_snps: 10
+
+predictosaurus:
+  min-prob-present: 0.1

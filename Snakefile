@@ -10,7 +10,7 @@ rule all:
     input:
         "results/variants.vcf",
         "results/mapped/reads.bam",
-        "results/predictosaurus/gene1.html",
+        "results/predictosaurus/graphs/",
         "results/observations/observations.vcf",
         "results/variant-calls/single.vcf",
         "results/alignoth/pileup.html",

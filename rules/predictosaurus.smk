@@ -6,11 +6,14 @@ rule predictosaurus_build:
         graph="results/predictosaurus/graph.duckdb"
     log:
         "logs/predictosaurus/build.log"
+    params:
+        mpp=config["predictosaurus"]["min-prob-present"],
     conda:
         "../envs/predictosaurus.yaml"
     shell:
         "predictosaurus build --calls {input.calls} "
         "--observations sample={input.observations} "
+        "--min-prob-present {params.mpp} "
         "--output {output.graph} -v > {log} 2>&1"
 
 
@@ -36,7 +39,7 @@ rule predictosaurus_plot:
     input:
         paths="results/predictosaurus/paths.duckdb"
     output:
-        html="results/predictosaurus/gene1.html"
+        html=directory("results/predictosaurus/graphs/")
     log:
         "logs/predictosaurus/plot.log"
     conda:
@@ -44,4 +47,4 @@ rule predictosaurus_plot:
     shell:
         "predictosaurus plot --input {input.paths} "
         "--format html "
-        "--output results/predictosaurus -v > {log} 2>&1"
+        "--output results/predictosaurus/graphs/ -v > {log} 2>&1"

@@ -32,16 +32,14 @@ rule simulate_variants:
         "logs/simulate_variants.log"
     params:
         snp_rate=config["mason"]["snp_rate"],
-        small_indel_rate=config["mason"]["small_indel_rate"],
-        max_small_indel_size=config["mason"]["max_small_indel_size"]
+        haplotypes=config["mason"]["haplotypes"],
     shell:
         """
         mason_variator \
             -ir {input.ref} \
             -ov {output.vcf} \
             --snp-rate {params.snp_rate} \
-            --small-indel-rate {params.small_indel_rate} \
-            --max-small-indel-size {params.max_small_indel_size} \
+            -n {params.haplotypes} \
             > {log} 2>&1
         """
 
@@ -60,7 +58,6 @@ rule simulate_reads:
     params:
         num_reads=config["mason"]["number_of_reads"],
         read_length=config["mason"]["read_length"],
-        fragment_size_stddev=config["mason"]["fragment_size_stddev"]
     shell:
         """
         mason_simulator \
@@ -68,8 +65,6 @@ rule simulate_reads:
             -iv {input.vcf} \
             -n {params.num_reads} \
             --illumina-read-length {params.read_length} \
-            --fragment-size-std-dev {params.fragment_size_stddev} \
-            --num-fragments {params.num_reads} \
             -o {output.r1} \
             -or {output.r2} \
             > {log} 2>&1

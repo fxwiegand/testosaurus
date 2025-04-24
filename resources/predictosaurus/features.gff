@@ -1,7 +1,6 @@
 ##gff-version 3
-ref   .   gene    1    1000  .   +   .   ID=gene1;Name=Gene1
-ref   .   mRNA    1    1000  .   +   .   ID=mRNA1;Parent=gene1;Name=mRNA1
-ref   .   CDS     700  760   .   +   0   ID=cds1;Parent=mRNA1;Name=CDS1
-ref   .   CDS     770  800   .   +   0   ID=cds2;Parent=mRNA1;Name=CDS2
-ref   .   exon    1    1000  .   +   .   ID=exon1;Parent=mRNA1;Name=Exon1
-
+ref	.	gene	1	1000	.	+	.	ID=gene1;Name=Gene1
+ref	.	mRNA	1	1000	.	+	.	ID=mRNA1;Parent=gene1;Name=mRNA1
+ref	.	CDS	1	450	.	+	0	ID=cds1;Parent=mRNA1;Name=CDS1
+ref	.	CDS	500	1000	.	+	0	ID=cds2;Parent=mRNA1;Name=CDS2
+ref	.	exon	1	1000	.	+	.	ID=exon1;Parent=mRNA1;Name=Exon1
