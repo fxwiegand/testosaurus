@@ -33,12 +33,14 @@ rule simulate_variants:
     params:
         snp_rate=config["mason"]["snp_rate"],
         haplotypes=config["mason"]["haplotypes"],
+        seed=config["mason"]["seed"]
     shell:
         """
         mason_variator \
             -ir {input.ref} \
             -ov {output.vcf} \
             --snp-rate {params.snp_rate} \
+            --seed {params.seed} \
             -n {params.haplotypes} \
             > {log} 2>&1
         """

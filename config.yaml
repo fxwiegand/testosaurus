@@ -5,6 +5,7 @@ mason:
   snp_rate: 0.01
   haplotypes: 2
   num_snps: 10
+  seed: 42
 
 predictosaurus:
   min-prob-present: 0.1
