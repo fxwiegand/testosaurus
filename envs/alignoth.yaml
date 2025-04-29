@@ -1,7 +1,6 @@
 name: alignoth
 channels:
-  - bioconda
   - conda-forge
-  - defaults
+  - bioconda
 dependencies:
   - alignoth=0.13.0

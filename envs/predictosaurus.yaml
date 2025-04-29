@@ -1,6 +1,6 @@
 name: predictosaurus
 channels:
-  - bioconda
   - conda-forge
+  - bioconda
 dependencies:
   - predictosaurus=0.3.1
