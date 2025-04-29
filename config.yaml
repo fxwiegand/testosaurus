@@ -3,7 +3,7 @@ mason:
   read_length: 150
   fragment_size_stddev: 10
   snp_rate: 0.01
-  haplotypes: 2
+  haplotypes: 1
   num_snps: 10
   seed: 42
 
