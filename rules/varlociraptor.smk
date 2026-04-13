@@ -17,11 +17,14 @@ rule varlociraptor_preprocess:
         ref_idx="results/ref.fasta.fai",
         alignment_properties="results/alignment-properties/reads.json",
         alignments="results/mapped/reads.bam",
+        aln_idx="results/mapped/reads.bam.bai",
         candidate_variants="results/variants.vcf",
     output:
         "results/observations/observations.bcf",
     log:
         "logs/varlociraptor/preprocess/reads.log",
+    params:
+        extra="--report-fragment-ids"
     wrapper:
         "v6.0.0/bio/varlociraptor/preprocess-variants"
 

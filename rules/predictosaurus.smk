@@ -46,4 +46,4 @@ rule predictosaurus_plot:
         "../envs/predictosaurus.yaml"
     shell:
         "predictosaurus plot --input {input.paths} "
-        "--output results/predictosaurus/scores.tsv -v > {log} 2>&1"
+        "--output {output.tsv} -v > {log} 2>&1"
