@@ -14,6 +14,7 @@ rule varlociraptor_alignment_properties:
 rule varlociraptor_preprocess:
     input:
         ref="results/ref.fasta",
+        ref_idx="results/ref.fasta.fai",
         alignment_properties="results/alignment-properties/reads.json",
         alignments="results/mapped/reads.bam",
         candidate_variants="results/variants.vcf",

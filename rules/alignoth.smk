@@ -2,7 +2,8 @@ rule alignoth_plot:
     input:
         bam="results/mapped/reads.bam",
         bam_index="results/mapped/reads.bam.bai",
-        ref="results/ref.fasta"
+        ref="results/ref.fasta",
+        ref_index="results/ref.fasta.fai"
     output:
         html="results/alignoth/pileup.html"
     log:
