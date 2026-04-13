@@ -31,7 +31,7 @@ rule varlociraptor_preprocess:
 rule varlociraptor_call:
     input:
         observations=["results/observations/observations.bcf"],
-        scenario="workflow/resources/scenarios/single.yaml",
+        scenario=workflow.source_path("../resources/scenarios/single.yaml"),
     output:
         "results/variant-calls/single.bcf",
     log:

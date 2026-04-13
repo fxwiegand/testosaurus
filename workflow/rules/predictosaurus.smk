@@ -19,7 +19,7 @@ rule predictosaurus_build:
 
 rule predictosaurus_process:
     input:
-        features="workflow/resources/predictosaurus/features.gff",
+        features=workflow.source_path("../resources/predictosaurus/features.gff"),
         reference="results/ref.fasta",
         graph="results/predictosaurus/graph.duckdb"
     output:
