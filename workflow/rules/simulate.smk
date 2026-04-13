@@ -5,6 +5,8 @@ rule generate_reference:
         "logs/generate_reference.log"
     run:
         import random
+        seed = config["mason"]["seed"]
+        random.seed(seed)
         seq = ''.join(random.choices('ACGT', k=1000))
         with open(output.fasta, 'w') as f:
             f.write(">ref\n" + seq + "\n")
