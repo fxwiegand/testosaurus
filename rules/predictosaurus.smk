@@ -39,12 +39,11 @@ rule predictosaurus_plot:
     input:
         paths="results/predictosaurus/paths.duckdb"
     output:
-        html=directory("results/predictosaurus/graphs/")
+        tsv="results/predictosaurus/scores.tsv"
     log:
         "logs/predictosaurus/plot.log"
     conda:
         "../envs/predictosaurus.yaml"
     shell:
         "predictosaurus plot --input {input.paths} "
-        "--format html "
-        "--output results/predictosaurus/graphs/ -v > {log} 2>&1"
+        "--output results/predictosaurus/scores.tsv -v > {log} 2>&1"
