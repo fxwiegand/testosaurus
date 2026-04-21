@@ -18,7 +18,7 @@ rule varlociraptor_preprocess:
         alignment_properties="results/alignment-properties/reads.json",
         alignments="results/mapped/reads.bam",
         aln_idx="results/mapped/reads.bam.bai",
-        candidate_variants="results/variants.vcf",
+        candidate_variants="results/variants.norm.bcf",
     output:
         "results/observations/observations.bcf",
     log:
@@ -40,14 +40,3 @@ rule varlociraptor_call:
         samples=["sample"],
     wrapper:
         "v6.0.0/bio/varlociraptor/call-variants"
-
-
-rule bcf_view_sample_file:
-    input:
-        "{prefix}.bcf",
-    output:
-        "{prefix}.vcf",
-    log:
-        "logs/{prefix}.vcf.log",
-    wrapper:
-        "v6.0.0/bio/bcftools/view"

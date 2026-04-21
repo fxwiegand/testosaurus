@@ -73,3 +73,16 @@ rule simulate_reads:
             -or {output.r2} \
             > {log} 2>&1
         """
+
+rule norm_vcf:
+    input:
+        "results/variants.vcf",
+        ref="results/ref.fasta",
+    output:
+        "results/variants.norm.bcf",
+    log:
+        "logs/normalize_variants.log"
+    params:
+        extra=""
+    wrapper:
+        "v9.4.1/bio/bcftools/norm"

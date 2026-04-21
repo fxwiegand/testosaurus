@@ -11,6 +11,6 @@ rule all:
         "results/variants.vcf",
         "results/mapped/reads.bam",
         "results/predictosaurus/scores.tsv",
-        "results/observations/observations.vcf",
-        "results/variant-calls/single.vcf",
+        "results/observations/observations.bcf",
+        "results/variant-calls/single.bcf",
         "results/alignoth/pileup.html",
