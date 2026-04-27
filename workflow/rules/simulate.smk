@@ -83,6 +83,6 @@ rule norm_vcf:
     log:
         "logs/normalize_variants.log"
     params:
-        extra=""
+        extra="-m-"
     wrapper:
         "v9.4.1/bio/bcftools/norm"

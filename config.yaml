@@ -4,7 +4,7 @@ mason:
   fragment_size_stddev: 5
   snp_rate: 0.005
   haplotypes: 2
-  seed: 646
+  seed: 645
 
 predictosaurus:
   min-prob-present: 0.1
